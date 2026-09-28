@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Junaid Hafeez Ashrafi — SDET & Senior Automation Engineer | 5+ Years Healthcare EHR | Selenium, Cypress, Playwright | HIPAA Certified">
+  <meta name="keywords" content="SDET, Automation Engineer, Selenium, Cypress, Playwright, testRigor, Python, Django, FastAPI, Healthcare IT, EHR, HIPAA, Postman, CI/CD">
+  <meta name="author" content="Junaid Hafeez Ashrafi">
+  <meta property="og:title" content="Junaid Hafeez Ashrafi | SDET & Senior Automation Engineer">
+  <meta property="og:description" content="HIPAA-Certified SDET with 5+ years building enterprise test automation for EHR & healthcare systems">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#06070b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f8f9fc" media="(prefers-color-scheme: light)">
+  <title>Junaid Hafeez Ashrafi | SDET & Senior Automation Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/profile.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>J</text></svg>">
+</head>
+<body>
+  <!-- Particle canvas for hero background -->
+  <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="logo-icon">J</div>
+        <span class="logo-text">Junaid<span class="logo-accent">.</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#downloads" class="nav-link">Downloads</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="tel:+923069287947" class="nav-phone" id="navPhoneLink">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="nav-phone-text">0306-9287947</span>
+        </a>
+        <a href="cv.html" target="_blank" class="nav-cv" title="Download CV" id="navCvLink">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>CV</span>
+        </a>
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="hero-badge animate-on-scroll" id="heroBadgeEl">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title animate-on-scroll">
+          <span class="hero-line-1" id="heroFirstNameEl">Junaid Hafeez</span>
+          <span class="hero-line-2"><span class="text-gradient" id="heroLastNameEl">Ashrafi</span></span>
+        </h1>
+        <div class="hero-role animate-on-scroll">
+          <div class="role-line"></div>
+          <span class="typed-text" id="typedText"></span><span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-description animate-on-scroll" id="heroDescEl">
+          HIPAA-Certified SDET with 5+ years architecting enterprise-grade test automation 
+          for Electronic Health Record (EHR) systems. I build scalable frameworks with 
+          Selenium, Cypress &amp; Playwright that guard healthcare software serving 
+          thousands of patients daily.
+        </p>
+        <div class="hero-actions animate-on-scroll">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Work</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-glass">
+            <span>Get In Touch</span>
+          </a>
+        </div>
+        <div class="hero-metrics animate-on-scroll" id="heroMetricsContainer">
+          <div class="metric">
+            <span class="metric-number" data-target="5">0</span><span class="metric-suffix">+</span>
+            <span class="metric-label">Years in QA</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric">
+            <span class="metric-number" data-target="7">0</span><span class="metric-suffix">+</span>
+            <span class="metric-label">Years in Tech</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric">
+            <span class="metric-number" data-target="15">0</span><span class="metric-suffix">+</span>
+            <span class="metric-label">Tools &amp; Frameworks</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right animate-on-scroll">
+          <div class="hero-image-wrapper" id="heroFloatingBadges">
+          <div class="image-glow"></div>
+          <div class="image-ring image-ring-1"></div>
+          <div class="image-ring image-ring-2"></div>
+          <div class="hero-image-container">
+            <img src="assets/profile.png" alt="Junaid Hafeez Ashrafi" class="hero-image" id="heroImageEl" loading="eager">
+          </div>
+          <!-- Floating badges around image -->
+          <div class="floating-badge fb-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span>Python</span>
+          </div>
+          <div class="floating-badge fb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <span>HIPAA</span>
+          </div>
+          <div class="floating-badge fb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span>EHR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-socials-bar" id="heroSocialsEl">
+      <div class="social-line"></div>
+      <a href="https://github.com/Mjunaidhafeez" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/junaidhafeezcs/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.kaggle.com/junaidhafeez" target="_blank" rel="noopener" aria-label="Kaggle" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.281.18.046.149.034.238-.036.27l-6.555 6.344 6.836 8.507c.095.104.117.208.075.323z"/></svg>
+      </a>
+      <a href="tel:+923069287947" aria-label="Phone" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <div class="social-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+        <p class="section-subtitle">Crafting quality in every line of code</p>
+      </div>
+      <!-- About Stats Row -->
+      <div class="about-stats animate-on-scroll" id="aboutStatsEl">
+        <div class="about-stat">
+          <div class="about-stat-number">5<span>+</span></div>
+          <div class="about-stat-label">Years in Healthcare QA</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">7<span>+</span></div>
+          <div class="about-stat-label">Years in Tech Industry</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">15<span>+</span></div>
+          <div class="about-stat-label">Tools & Frameworks</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">3<span>+</span></div>
+          <div class="about-stat-label">EHR Systems Tested</div>
+        </div>
+      </div>
+
+      <!-- About Content -->
+      <div class="about-body animate-on-scroll">
+        <div class="about-text" id="aboutTextEl">
+          <p class="about-lead">
+            I'm a <strong>HIPAA-Certified SDET</strong> at <strong>Ethizo</strong> with 
+            <strong>5+ years</strong> specializing in healthcare test automation. I architect 
+            enterprise-grade testing solutions for EHR systems, patient portals, and 
+            cloud-based health platforms that serve thousands of providers daily.
+          </p>
+          <p>
+            My toolkit spans Selenium, Cypress, Playwright, and testRigor for UI automation, 
+            Postman for comprehensive API testing, and Python-based frameworks integrated 
+            into CI/CD pipelines. I've built test architectures that reduced production 
+            defects significantly while accelerating release cycles.
+          </p>
+          <p>
+            With 7+ years total in the tech industry &mdash; from desktop development to 
+            IT management to quality engineering &mdash; I bring a rare end-to-end perspective. 
+            I also build full-stack applications with Django/FastAPI and Flutter, and 
+            actively pursue data science on Kaggle.
+          </p>
+        </div>
+        <div class="about-detail-cards" id="aboutDetailsEl">
+          <div class="about-detail">
+            <div class="about-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3h-8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
+            </div>
+            <div>
+              <span class="about-detail-label">Current Role</span>
+              <span class="about-detail-value">SDET at Ethizo</span>
+            </div>
+          </div>
+          <div class="about-detail">
+            <div class="about-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="about-detail-label">Based In</span>
+              <span class="about-detail-value">Lahore, Pakistan</span>
+            </div>
+          </div>
+          <div class="about-detail">
+            <div class="about-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <span class="about-detail-label">Certification</span>
+              <span class="about-detail-value">HIPAA Certified</span>
+            </div>
+          </div>
+          <div class="about-detail">
+            <div class="about-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <span class="about-detail-label">Education</span>
+              <span class="about-detail-value">BS CS + MBA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Highlights -->
+      <div class="about-highlights-grid animate-on-scroll" id="aboutHighlightsEl">
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h4>Quality-First Approach</h4>
+          <p>Building automated test suites that ensure zero-defect releases for healthcare platforms</p>
+        </div>
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4>Healthcare Domain</h4>
+          <p>Deep expertise in EHR/EMR systems, HL7/FHIR standards, and HIPAA-compliant software</p>
+        </div>
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h4>Full-Stack Capable</h4>
+          <p>Python, Django, FastAPI, Flutter, and modern web & mobile technologies</p>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Skills & <span class="text-gradient">Expertise</span></h2>
+        <p class="section-subtitle">Technologies and tools I work with</p>
+      </div>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-card animate-on-scroll">
+          <div class="skill-card-glow"></div>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>QA & Automation</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Selenium WebDriver</span>
+            <span class="pill">Cypress</span>
+            <span class="pill">Playwright</span>
+            <span class="pill">testRigor</span>
+            <span class="pill">API Testing (Postman)</span>
+            <span class="pill">Mobile Testing (Android/iOS)</span>
+            <span class="pill">Regression &amp; Performance Testing</span>
+            <span class="pill">CI/CD Pipelines</span>
+            <span class="pill">Agentic AI Automation</span>
+          </div>
+        </div>
+        <div class="skill-card animate-on-scroll">
+          <div class="skill-card-glow"></div>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Python</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Dart</span>
+            <span class="pill">SQL</span>
+            <span class="pill">HTML / CSS</span>
+            <span class="pill">Shell Scripting</span>
+          </div>
+        </div>
+        <div class="skill-card animate-on-scroll">
+          <div class="skill-card-glow"></div>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h3>Frameworks & Tools</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Django</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">Flutter</span>
+            <span class="pill">REST APIs</span>
+            <span class="pill">MySQL / PostgreSQL</span>
+            <span class="pill">Git / GitHub</span>
+            <span class="pill">Jira / Trello</span>
+            <span class="pill">Postman</span>
+            <span class="pill">Docker</span>
+          </div>
+        </div>
+        <div class="skill-card animate-on-scroll">
+          <div class="skill-card-glow"></div>
+          <div class="skill-header">
+            <div class="skill-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Domain Expertise</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Healthcare IT</span>
+            <span class="pill">EHR / EMR Systems</span>
+            <span class="pill">Patient Portals</span>
+            <span class="pill pill-highlight">HIPAA Certified</span>
+            <span class="pill">HL7 / FHIR Standards</span>
+            <span class="pill">Clinical Workflows</span>
+            <span class="pill">Data Science</span>
+            <span class="pill">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE SECTION ============ -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Work <span class="text-gradient">Experience</span></h2>
+        <p class="section-subtitle">My professional journey so far</p>
+      </div>
+      <div class="timeline" id="timelineContainer">
+        <!-- Ethizo (current) -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+          <div class="timeline-card">
+            <div class="timeline-badge">Current</div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">SDET / Automation Engineer</h3>
+                <p class="timeline-company"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Ethizo <span class="company-note">(formerly AppifyTech)</span></p>
+              </div>
+              <span class="timeline-date">Jan 2022 &mdash; Present</span>
+            </div>
+            <ul class="timeline-details">
+              <li>Architect and maintain enterprise test automation frameworks using Selenium, Cypress, and Playwright for cloud-based EHR systems serving thousands of healthcare providers</li>
+              <li>Design comprehensive test strategies for HIPAA-compliant healthcare applications including patient portals, clinical workflows, and billing modules</li>
+              <li>Implement API test automation with Postman and Python for REST/FastAPI services ensuring data integrity across patient records</li>
+              <li>Integrate quality gates into CI/CD pipelines, reducing production defects and accelerating release velocity</li>
+              <li>Perform database validation using MySQL to verify data consistency across EHR encounters, prescriptions, and demographics</li>
+              <li>Lead cross-browser, cross-platform, and mobile (Android/iOS) compatibility testing for web and native healthcare applications</li>
+              <li>Leverage Agentic AI automation and testRigor for next-generation no-code test authoring</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Selenium</span><span>Cypress</span><span>Playwright</span><span>Python</span><span>Postman</span><span>MySQL</span><span>CI/CD</span><span>HIPAA</span>
+            </div>
+          </div>
+        </div>
+        <!-- ITCurves -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">SQA Engineer</h3>
+                <p class="timeline-company"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> ITCurves Pakistan</p>
+              </div>
+              <span class="timeline-date">Jan 2021 &mdash; Dec 2021</span>
+            </div>
+            <ul class="timeline-details">
+              <li>Executed black-box testing with deep understanding of SDLC and SQA methodology</li>
+              <li>Developed test cases, test plans, and comprehensive test documentation</li>
+              <li>Collaborated closely with developers to identify, capture, and resolve defects</li>
+              <li>Performed functional, regression, and smoke testing for enterprise web applications</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Manual Testing</span><span>Jira</span><span>Test Planning</span><span>SDLC</span><span>Agile</span>
+            </div>
+          </div>
+        </div>
+        <!-- Soft-Pak -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Desktop Application Developer</h3>
+                <p class="timeline-company"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Soft-Pak</p>
+              </div>
+              <span class="timeline-date">Oct 2019 &mdash; Dec 2020</span>
+            </div>
+            <ul class="timeline-details">
+              <li>Designed and developed desktop applications for business process automation</li>
+              <li>Built software solutions with focus on usability, performance, and data integrity</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Desktop Dev</span><span>SQL</span><span>Software Engineering</span>
+            </div>
+          </div>
+        </div>
+        <!-- The Educator -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">IT Manager</h3>
+                <p class="timeline-company"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> The Educator</p>
+              </div>
+              <span class="timeline-date">Feb 2019 &mdash; Sep 2019</span>
+            </div>
+            <ul class="timeline-details">
+              <li>Managed IT infrastructure and technical operations for an educational institution</li>
+              <li>Led technology planning, vendor management, and system administration</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>IT Management</span><span>Infrastructure</span><span>Leadership</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION SECTION ============ -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Education & <span class="text-gradient">Certifications</span></h2>
+        <p class="section-subtitle">Academic foundation driving professional excellence</p>
+      </div>
+
+      <!-- Education Timeline -->
+      <div class="edu-timeline" id="eduTimeline">
+        <!-- BS Computer Science -->
+        <div class="edu-tl-item edu-tl-primary animate-on-scroll">
+          <div class="edu-tl-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+          </div>
+          <div class="edu-tl-card">
+            <div class="edu-tl-header">
+              <div>
+                <span class="edu-tl-badge edu-tl-badge-primary">Primary Degree</span>
+                <h3 class="edu-tl-degree">Bachelor of Science (BS) &mdash; Computer Science</h3>
+                <p class="edu-tl-school">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  The Islamia University of Bahawalpur
+                </p>
+              </div>
+              <span class="edu-tl-year">2013 &mdash; 2017</span>
+            </div>
+            <p class="edu-tl-desc">Rigorous 4-year program covering programming fundamentals, data structures &amp; algorithms, database systems, OS, computer networks, software engineering, AI, and web/mobile development. Built strong foundations in analytical thinking and project-based engineering.</p>
+          </div>
+        </div>
+
+        <!-- MA History -->
+        <div class="edu-tl-item animate-on-scroll">
+          <div class="edu-tl-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+          </div>
+          <div class="edu-tl-card">
+            <div class="edu-tl-header">
+              <div>
+                <h3 class="edu-tl-degree">Master of Arts (MA) &mdash; History</h3>
+                <p class="edu-tl-school">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  The Islamia University of Bahawalpur
+                </p>
+              </div>
+              <span class="edu-tl-year">2018 &mdash; 2020</span>
+            </div>
+            <p class="edu-tl-desc">In-depth study of historical events, civilizations, socio-political transformations, historiography, and research methodology.</p>
+          </div>
+        </div>
+
+        <!-- MA Education -->
+        <div class="edu-tl-item animate-on-scroll">
+          <div class="edu-tl-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+          </div>
+          <div class="edu-tl-card">
+            <div class="edu-tl-header">
+              <div>
+                <h3 class="edu-tl-degree">Master of Arts (MA) &mdash; Education</h3>
+                <p class="edu-tl-school">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Allama Iqbal Open University (AIOU)
+                </p>
+              </div>
+              <span class="edu-tl-year">2020 &mdash; 2022</span>
+            </div>
+            <p class="edu-tl-desc">Focused on educational theories, curriculum development, teaching methodologies, and research in modern pedagogical practices.</p>
+          </div>
+        </div>
+
+        <!-- MBA -->
+        <div class="edu-tl-item edu-tl-primary animate-on-scroll">
+          <div class="edu-tl-dot edu-tl-dot-active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+          </div>
+          <div class="edu-tl-card">
+            <div class="edu-tl-header">
+              <div>
+                <span class="edu-tl-badge edu-tl-badge-active">Continuing</span>
+                <h3 class="edu-tl-degree">Master of Business Administration (MBA)</h3>
+                <p class="edu-tl-school">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Superior University, Lahore
+                </p>
+              </div>
+              <span class="edu-tl-year edu-tl-year-active">Continuing</span>
+            </div>
+            <p class="edu-tl-desc">Advanced graduate program in business strategy, financial management, organizational leadership, marketing, operations management, and entrepreneurship. Developing strategic decision-making and leadership capabilities for competitive global markets.</p>
+
+            <!-- MBA Semester Projects -->
+            <div class="mba-projects">
+
+              <!-- Semester 1 -->
+              <div class="mba-sem" data-sem="1">
+                <button class="mba-sem-toggle" onclick="toggleSem(this)">
+                  <div class="mba-sem-badge">Semester 1</div>
+                  <span class="mba-sem-count">5 Projects</span>
+                  <svg class="mba-sem-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="mba-sem-body">
+                  <div class="mba-proj-grid">
+                    <div class="mba-proj-card" data-file="https://portfolio-junaid-hafeezs-projects-08ae99c1.vercel.app/ppts/financial-accounting.pptx" data-title="Financial Accounting" onclick="openPptPreview(this)">
+                      <div class="mba-proj-icon" style="--proj-color:#14b8a6">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      </div>
+                      <div class="mba-proj-info">
+                        <span class="mba-proj-num">01</span>
+                        <h5>Financial Accounting</h5>
+                        <span class="mba-proj-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Preview</span>
+                      </div>
+                    </div>
+                    <div class="mba-proj-card" data-file="https://portfolio-junaid-hafeezs-projects-08ae99c1.vercel.app/ppts/management-history.pptx" data-title="Management History" onclick="openPptPreview(this)">
+                      <div class="mba-proj-icon" style="--proj-color:#8b5cf6">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      </div>
+                      <div class="mba-proj-info">
+                        <span class="mba-proj-num">02</span>
+                        <h5>Management History</h5>
+                        <span class="mba-proj-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Preview</span>
+                      </div>
+                    </div>
+                    <div class="mba-proj-card" data-file="https://portfolio-junaid-hafeezs-projects-08ae99c1.vercel.app/ppts/communication-leaders.pptx" data-title="Communication For Leaders" onclick="openPptPreview(this)">
+                      <div class="mba-proj-icon" style="--proj-color:#ec4899">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      </div>
+                      <div class="mba-proj-info">
+                        <span class="mba-proj-num">03</span>
+                        <h5>Communication For Leaders</h5>
+                        <span class="mba-proj-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Preview</span>
+                      </div>
+                    </div>
+                    <div class="mba-proj-card" data-file="https://portfolio-junaid-hafeezs-projects-08ae99c1.vercel.app/ppts/pakistan-economy.pptx" data-title="Pakistan Economy" onclick="openPptPreview(this)">
+                      <div class="mba-proj-icon" style="--proj-color:#f59e0b">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      </div>
+                      <div class="mba-proj-info">
+                        <span class="mba-proj-num">04</span>
+                        <h5>Pakistan Economy</h5>
+                        <span class="mba-proj-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Preview</span>
+                      </div>
+                    </div>
+                    <div class="mba-proj-card mba-proj-featured" data-file="https://jamia-alhikam.vercel.app/Jamia-Al-Hikam-Presentation.pptx" data-title="Marketing Management" onclick="openPptPreview(this)">
+                      <div class="mba-proj-icon" style="--proj-color:#c9a227">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      </div>
+                      <div class="mba-proj-info">
+                        <span class="mba-proj-num">05</span>
+                        <h5>Marketing Management</h5>
+                        <span class="mba-proj-sub">Jamia Al-Hikam Strategy</span>
+                        <span class="mba-proj-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Preview</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Semester 2 -->
+              <div class="mba-sem" data-sem="2">
+                <button class="mba-sem-toggle" onclick="toggleSem(this)">
+                  <div class="mba-sem-badge mba-sem-badge-pending">Semester 2</div>
+                  <span class="mba-sem-status-pending"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pending</span>
+                  <svg class="mba-sem-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="mba-sem-body">
+                  <div class="mba-pending-msg">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <p>Projects will be added once Semester 2 begins</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Semester 3 -->
+              <div class="mba-sem" data-sem="3">
+                <button class="mba-sem-toggle" onclick="toggleSem(this)">
+                  <div class="mba-sem-badge mba-sem-badge-pending">Semester 3</div>
+                  <span class="mba-sem-status-pending"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pending</span>
+                  <svg class="mba-sem-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="mba-sem-body">
+                  <div class="mba-pending-msg">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <p>Projects will be added once Semester 3 begins</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Semester 4 -->
+              <div class="mba-sem" data-sem="4">
+                <button class="mba-sem-toggle" onclick="toggleSem(this)">
+                  <div class="mba-sem-badge mba-sem-badge-pending">Semester 4</div>
+                  <span class="mba-sem-status-pending"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pending</span>
+                  <svg class="mba-sem-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="mba-sem-body">
+                  <div class="mba-pending-msg">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <p>Projects will be added once Semester 4 begins</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- PPT Preview Modal -->
+            <div class="ppt-modal" id="pptModal">
+              <div class="ppt-modal-backdrop" onclick="closePptPreview()"></div>
+              <div class="ppt-modal-container">
+                <div class="ppt-modal-header">
+                  <h4 class="ppt-modal-title" id="pptModalTitle">Presentation</h4>
+                  <div class="ppt-modal-actions">
+                    <a class="ppt-modal-download" id="pptModalDownload" href="#" download>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      Download
+                    </a>
+                    <button class="ppt-modal-close" onclick="closePptPreview()">&times;</button>
+                  </div>
+                </div>
+                <div class="ppt-modal-body">
+                  <div class="ppt-modal-loading" id="pptModalLoading">
+                    <div class="ppt-modal-spinner"></div>
+                    <span>Loading preview&hellip;</span>
+                  </div>
+                  <iframe class="ppt-modal-iframe" id="pptModalIframe" src="" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Darse Nizami -->
+        <div class="edu-tl-item animate-on-scroll">
+          <div class="edu-tl-dot edu-tl-dot-active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="edu-tl-card">
+            <div class="edu-tl-header">
+              <div>
+                <span class="edu-tl-badge edu-tl-badge-active">In Progress</span>
+                <h3 class="edu-tl-degree">Darse Nizami &mdash; Islamic Studies</h3>
+                <p class="edu-tl-school">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Jamia Ashrafia, Lahore
+                </p>
+              </div>
+              <span class="edu-tl-year edu-tl-year-active">2022 &mdash; 2027</span>
+            </div>
+            <p class="edu-tl-desc">Comprehensive program in classical Islamic sciences including Tafseer, Hadith, Fiqh, Arabic grammar &amp; literature, and Islamic history.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div id="certificates"></div>
+      <div id="certifications"></div>
+      <div class="cert-grid animate-on-scroll" id="certGrid">
+        <div class="cert-card">
+          <div class="cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h4 class="cert-name">HIPAA Certified</h4>
+          <p class="cert-detail">Healthcare Privacy & Compliance</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h4 class="cert-name">Agile / Scrum</h4>
+          <p class="cert-detail">Methodology & Framework</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h4 class="cert-name">Selenium Expert</h4>
+          <p class="cert-detail">WebDriver Specialist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+        <p class="section-subtitle">Showcasing my technical abilities</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card project-featured animate-on-scroll">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-label">Featured Project</span>
+              <div class="project-links">
+                <a href="https://github.com/Mjunaidhafeez/Selenium_Testing_Framework" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Selenium Testing Framework</h3>
+            <p class="project-desc">A comprehensive test automation framework built with Selenium WebDriver. Features Page Object Model architecture, data-driven testing, and cross-browser support for web application quality assurance.</p>
+            <div class="project-tech"><span>Selenium</span><span>Python</span><span>POM</span><span>HTML</span></div>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-label">Mobile App</span>
+              <div class="project-links">
+                <a href="https://github.com/Mjunaidhafeez/Inventory_management" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Inventory Management System</h3>
+            <p class="project-desc">Complete inventory management system with real-time stock tracking, supplier management, and comprehensive reporting with a clean mobile-first UI.</p>
+            <div class="project-tech"><span>Flutter</span><span>Dart</span><span>Mobile</span><span>UI/UX</span></div>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-label">Full Stack</span>
+              <div class="project-links">
+                <a href="https://github.com/Mjunaidhafeez/D_jango_project" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Django E-Commerce Platform</h3>
+            <p class="project-desc">Full-featured online e-shop with product catalog, shopping cart, user authentication, order management, and payment integration with a responsive frontend.</p>
+            <div class="project-tech"><span>Python</span><span>Django</span><span>PostgreSQL</span><span>REST API</span></div>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-number">04</div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-label">Automation</span>
+              <div class="project-links">
+                <a href="https://github.com/Mjunaidhafeez/python_scrapping" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Python Web Scraper</h3>
+            <p class="project-desc">Intelligent web scraping tool that automates data extraction with configurable selectors, rate limiting, and structured data output for analysis.</p>
+            <div class="project-tech"><span>Python</span><span>BeautifulSoup</span><span>Requests</span><span>Data</span></div>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-number">05</div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-label">Web App</span>
+              <div class="project-links">
+                <a href="https://github.com/Mjunaidhafeez/portfolio-django" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Portfolio Web Application</h3>
+            <p class="project-desc">Dynamic portfolio built with Django featuring project showcase, blog functionality, contact forms, and admin dashboard for content management.</p>
+            <div class="project-tech"><span>Django</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-number">06</div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="project-label">Mobile App</span>
+              <div class="project-links">
+                <a href="https://github.com/Mjunaidhafeez/Flutter-Shopping-Cart-With-Provider" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Flutter Shopping Cart</h3>
+            <p class="project-desc">Mobile shopping cart app built with Flutter and Provider state management. Product browsing, cart management, and a polished Material Design interface.</p>
+            <div class="project-tech"><span>Flutter</span><span>Dart</span><span>Provider</span><span>Material UI</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="projects-more animate-on-scroll">
+        <a href="https://github.com/Mjunaidhafeez?tab=repositories" target="_blank" rel="noopener" class="btn btn-glass">
+          <span>View All on GitHub</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOADS SECTION ============ -->
+  <section class="section downloads" id="downloads">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">06</span>
+        <h2 class="section-title"><span class="text-gradient">Downloads</span></h2>
+        <p class="section-subtitle">View, search, and download documents, presentations, PDFs, and media files</p>
+      </div>
+
+      <div class="downloads-controls animate-on-scroll">
+        <div class="downloads-search-wrap">
+          <input type="text" id="downloadSearchInput" class="downloads-search" placeholder="Search files by title, file name, category, or tags...">
+        </div>
+        <div class="downloads-filter-wrap">
+          <select id="downloadCategoryFilter" class="downloads-filter">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="downloads-grid animate-on-scroll" id="downloadList"></div>
+      <div class="downloads-empty animate-on-scroll" id="downloadEmptyState" style="display:none">
+        <p>No files found for current search/filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-number">07</span>
+        <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+        <p class="section-subtitle">Ready to build something amazing together?</p>
+      </div>
+      <div class="contact-grid animate-on-scroll" id="contactGrid">
+        <a href="mailto:junaidhafeez.cs@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span class="contact-card-label">Email</span>
+          <span class="contact-card-value">junaidhafeez.cs@gmail.com</span>
+          <span class="contact-card-action">Send Email &rarr;</span>
+        </a>
+        <a href="tel:+923069287947" class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span class="contact-card-label">Phone</span>
+          <span class="contact-card-value">+92 306 928 7947</span>
+          <span class="contact-card-action">Call Now &rarr;</span>
+        </a>
+        <a href="https://www.linkedin.com/in/junaidhafeezcs/" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <span class="contact-card-label">LinkedIn</span>
+          <span class="contact-card-value">junaidhafeezcs</span>
+          <span class="contact-card-action">Connect &rarr;</span>
+        </a>
+        <a href="https://github.com/Mjunaidhafeez" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <span class="contact-card-label">GitHub</span>
+          <span class="contact-card-value">Mjunaidhafeez</span>
+          <span class="contact-card-action">View Profile &rarr;</span>
+        </a>
+        <a href="https://www.kaggle.com/junaidhafeez" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.281.18.046.149.034.238-.036.27l-6.555 6.344 6.836 8.507c.095.104.117.208.075.323z"/></svg>
+          </div>
+          <span class="contact-card-label">Kaggle</span>
+          <span class="contact-card-value">junaidhafeez</span>
+          <span class="contact-card-action">View Profile &rarr;</span>
+        </a>
+        <a href="https://jamia-alhikam.vercel.app" target="_blank" rel="noopener" class="contact-card jamia-card">
+          <div class="jamia-card-img">
+            <img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400&q=80" alt="Jamia Al-Hikam" loading="lazy">
+            <div class="jamia-card-overlay"></div>
+            <div class="jamia-card-seal">JH</div>
+          </div>
+          <span class="contact-card-label" style="color:#c9a227">My Institute</span>
+          <span class="contact-card-value">Jamia Al-Hikam</span>
+          <span class="jamia-card-desc">Global Research Institute of Leadership, Technology & Ethics</span>
+          <span class="contact-card-action" style="color:#c9a227">Visit Website &rarr;</span>
+        </a>
+        <div class="contact-card contact-cta-card" id="contactCtaEl">
+          <h3>Let's Work Together</h3>
+          <p>I'm currently open to new opportunities and exciting projects.</p>
+          <a href="mailto:junaidhafeez.cs@gmail.com" class="btn btn-primary">
+            <span>Start a Conversation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand" id="footerBrand">
+          <a href="#hero" class="nav-logo">
+            <div class="logo-icon">J</div>
+            <span class="logo-text">Junaid<span class="logo-accent">.</span></span>
+          </a>
+          <p id="footerTagline">Building quality software that impacts lives.</p>
+        </div>
+        <div class="footer-links" id="footerLinksEl">
+          <h4>Quick Links</h4>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="admin.html" class="admin-link">Admin Panel</a>
+        </div>
+        <div class="footer-contact" id="footerContactEl">
+          <h4>Contact Info</h4>
+          <a href="mailto:junaidhafeez.cs@gmail.com">junaidhafeez.cs@gmail.com</a>
+          <a href="tel:+923069287947">+92 306 928 7947</a>
+          <a href="https://www.linkedin.com/in/junaidhafeezcs/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="footerCopyright">&copy; <span id="currentYear"></span> Junaid Hafeez Ashrafi. All rights reserved.</p>
+        <div class="footer-socials" id="footerSocials">
+          <a href="https://github.com/Mjunaidhafeez" target="_blank" rel="noopener" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="https://www.linkedin.com/in/junaidhafeezcs/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.kaggle.com/junaidhafeez" target="_blank" rel="noopener" aria-label="Kaggle"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.281.18.046.149.034.238-.036.27l-6.555 6.344 6.836 8.507c.095.104.117.208.075.323z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT MESSAGE MODAL ============ -->
+  <div class="msg-modal-overlay" id="msgOverlay">
+    <div class="msg-modal">
+      <button class="msg-close" id="msgClose">&times;</button>
+      <h3>Send Me a Message</h3>
+      <p class="msg-sub">I'll get back to you within 24 hours.</p>
+      <form id="contactForm" action="https://formsubmit.co/junaidhafeez.cs@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Portfolio Message from Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="/#contact">
+        <input type="text" name="name" placeholder="Your Name" required class="msg-input">
+        <input type="email" name="email" placeholder="Your Email" required class="msg-input">
+        <textarea name="message" placeholder="Your Message..." required class="msg-input msg-textarea" rows="4"></textarea>
+        <button type="submit" class="btn btn-primary msg-send">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span>Send Message</span>
+        </button>
+      </form>
+      <div class="msg-success" id="msgSuccess" style="display:none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h4>Message Sent!</h4>
+        <p>Thanks for reaching out. I'll respond soon.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FLOATING CHAT + AI BOT ============ -->
+  <div class="fab-container">
+    <button class="fab fab-msg" id="fabMsg" title="Send me a message">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+
+  <!-- AI Chatbot Panel -->
+  <div class="ai-chat" id="aiChat">
+    <div class="ai-chat-header">
+      <div class="ai-chat-title">
+        <div class="ai-avatar">AI</div>
+        <div>
+          <strong>Junaid's AI Assistant</strong>
+          <span class="ai-status">Online — Ask me anything</span>
+        </div>
+      </div>
+      <button class="ai-chat-close" id="aiClose">&times;</button>
+    </div>
+    <div class="ai-chat-body" id="aiBody">
+      <div class="ai-msg ai-msg-bot">
+        <div class="ai-msg-avatar">AI</div>
+        <div class="ai-msg-bubble">Hi! I'm Junaid's AI assistant. Ask me about his skills, experience, education, projects, or how to contact him. How can I help you?</div>
+      </div>
+    </div>
+    <div class="ai-quick-chips" id="aiChips">
+      <button class="ai-chip" data-q="What are his skills?">Skills</button>
+      <button class="ai-chip" data-q="Tell me about his experience">Experience</button>
+      <button class="ai-chip" data-q="What is his education?">Education</button>
+      <button class="ai-chip" data-q="How can I contact him?">Contact</button>
+      <button class="ai-chip" data-q="What projects has he built?">Projects</button>
+      <button class="ai-chip" data-q="Download his CV">CV</button>
+    </div>
+    <div class="ai-chat-input">
+      <input type="text" id="aiInput" placeholder="Ask about Junaid..." autocomplete="off">
+      <button id="aiSend">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js?v=20260403-8"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

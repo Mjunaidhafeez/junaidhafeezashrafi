@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JHA Portfolio Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="cv-builder.css">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===================== LOGIN SCREEN ===================== -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">
+        <div style="width:76px;height:76px;margin:0 auto 14px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:1px;font-family:'Inter',sans-serif">JHA</div>
+        <h2>Portfolio Admin</h2>
+        <p>Junaid Hafeez Ashrafi</p>
+      </div>
+      <form id="loginForm">
+        <div class="fg">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="admin@example.com" required>
+        </div>
+        <div class="fg">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter password" required>
+        </div>
+        <div class="login-error" id="loginError"></div>
+        <button type="submit" class="btn btn-primary btn-full" id="loginBtn">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================== ADMIN APP ===================== -->
+  <div class="admin-app" id="adminApp" style="display:none">
+
+    <!-- Mobile Hamburger -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div style="width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff;letter-spacing:.5px;flex-shrink:0">JHA</div>
+        <div>
+          <strong>Portfolio Admin</strong>
+          <span class="sidebar-email" id="adminEmail"></span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="sidebar-link active" data-tab="dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </button>
+
+        <button class="sidebar-link" data-tab="settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Site Settings
+        </button>
+
+        <button class="sidebar-link" data-tab="navigation">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Navigation Links
+        </button>
+
+        <button class="sidebar-link" data-tab="theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          Theme / Colors
+        </button>
+
+        <button class="sidebar-link" data-tab="hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Hero Section
+        </button>
+
+        <button class="sidebar-link" data-tab="about">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          About Section
+        </button>
+
+        <button class="sidebar-link" data-tab="skills">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Skills
+        </button>
+
+        <button class="sidebar-link" data-tab="experience">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Experience
+        </button>
+
+        <button class="sidebar-link" data-tab="education">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+          Education
+        </button>
+
+        <button class="sidebar-link" data-tab="projects">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Projects
+        </button>
+
+        <button class="sidebar-link" data-tab="downloads">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Downloads
+        </button>
+
+        <button class="sidebar-link" data-tab="contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </button>
+
+        <button class="sidebar-link" data-tab="footer-links">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Footer Links
+        </button>
+
+        <button class="sidebar-link" data-tab="chatbot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          AI Chatbot
+        </button>
+
+        <div style="height:1px;background:#1e1e2f;margin:8px 12px"></div>
+
+        <button class="sidebar-link" data-tab="cv-builder">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          CV Builder
+          <span style="margin-left:auto;font-size:.55rem;padding:2px 6px;border-radius:100px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;font-weight:700">AI</span>
+        </button>
+      </nav>
+
+      <button class="sidebar-logout" id="logoutBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Logout
+      </button>
+    </aside>
+
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content">
+
+      <!-- ==================== DASHBOARD ==================== -->
+      <div class="tab-panel active" id="tab-dashboard">
+        <div class="page-header">
+          <h1>Dashboard</h1>
+          <p>Welcome to Portfolio Admin Panel</p>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="sc-icon" style="background:#8b5cf6">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <span class="sc-num" id="projCount">0</span>
+              <span class="sc-label">Projects</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="sc-icon" style="background:#3b82f6">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <span class="sc-num" id="skillCount">0</span>
+              <span class="sc-label">Skill Categories</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="sc-icon" style="background:#f59e0b">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div>
+              <span class="sc-num" id="expCount">0</span>
+              <span class="sc-label">Experience Items</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="sc-icon" style="background:#10b981">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+            </div>
+            <div>
+              <span class="sc-num" id="eduCount">0</span>
+              <span class="sc-label">Education Entries</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <h3>Quick Actions</h3>
+          <div class="qa-grid">
+            <button class="qa-btn" data-goto="projects">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              New Project
+            </button>
+            <button class="qa-btn" data-goto="experience">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              New Experience
+            </button>
+            <button class="qa-btn" data-goto="skills">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              New Skill
+            </button>
+            <a href="index.html" target="_blank" class="qa-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Website
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SITE SETTINGS ==================== -->
+      <div class="tab-panel" id="tab-settings">
+        <div class="page-header">
+          <h1>Site Settings</h1>
+          <p>Manage your personal information and social links</p>
+        </div>
+
+        <div class="editor-card">
+          <h3>Personal Information</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="settingName">Full Name</label>
+              <input type="text" id="settingName" placeholder="Junaid Hafeez Ashrafi">
+            </div>
+            <div class="fg">
+              <label for="settingTitle">Job Title</label>
+              <input type="text" id="settingTitle" placeholder="SDET / QA Engineer">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="settingEmail">Email Address</label>
+              <input type="email" id="settingEmail" placeholder="your@email.com">
+            </div>
+            <div class="fg">
+              <label for="settingPhone">Phone Number</label>
+              <input type="text" id="settingPhone" placeholder="+1 XXX XXX XXXX">
+            </div>
+          </div>
+          <div class="fg">
+            <label for="settingLocation">Location</label>
+            <input type="text" id="settingLocation" placeholder="City, Country">
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Social Media &amp; Links</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="settingGithub">GitHub URL</label>
+              <input type="url" id="settingGithub" placeholder="https://github.com/...">
+            </div>
+            <div class="fg">
+              <label for="settingLinkedin">LinkedIn URL</label>
+              <input type="url" id="settingLinkedin" placeholder="https://linkedin.com/in/...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="settingKaggle">Kaggle URL</label>
+              <input type="url" id="settingKaggle" placeholder="https://kaggle.com/...">
+            </div>
+            <div class="fg">
+              <label for="settingCvUrl">CV / Resume URL</label>
+              <input type="url" id="settingCvUrl" placeholder="https://link-to-cv.pdf">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Footer Settings</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="settingFooterTagline">Footer Tagline</label>
+              <input type="text" id="settingFooterTagline" placeholder="Building quality software that impacts lives.">
+            </div>
+            <div class="fg">
+              <label for="settingFormEmail">Contact Form Email</label>
+              <input type="email" id="settingFormEmail" placeholder="Email for contact form submissions">
+            </div>
+          </div>
+          <div class="fg">
+            <label for="settingCopyrightText">Copyright Text</label>
+            <input type="text" id="settingCopyrightText" placeholder="e.g. &copy; 2026 Junaid Hafeez Ashrafi. All rights reserved.">
+            <small style="color:#6b7280;font-size:.75rem">Leave blank for auto-generated from your name</small>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Upload Provider (Optional)</h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:12px">
+            For large files on free Firebase, use Cloudinary unsigned upload.
+            Fill both fields below to switch uploads from Firebase to Cloudinary.
+          </p>
+          <div class="form-row">
+            <div class="fg">
+              <label for="settingCloudName">Cloudinary Cloud Name</label>
+              <input type="text" id="settingCloudName" placeholder="e.g. demo-cloud">
+            </div>
+            <div class="fg">
+              <label for="settingCloudUploadPreset">Cloudinary Upload Preset (unsigned)</label>
+              <input type="text" id="settingCloudUploadPreset" placeholder="e.g. portfolio_uploads">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="saveSettingsBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Settings
+          </button>
+        </div>
+
+        <div style="height:1px;background:#e5e7eb;margin:32px 0"></div>
+
+        <div class="page-header" style="margin-top:0">
+          <h1>Account Security</h1>
+          <p>Change your admin login credentials</p>
+        </div>
+
+        <div class="editor-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Change Email
+          </h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">Update the email address used to sign in. A verification link will be sent to the new email &mdash; click it to complete the change.</p>
+          <div class="fg">
+            <label for="acctCurrentEmail">Current Email</label>
+            <input type="email" id="acctCurrentEmail" disabled style="background:#f3f4f6;color:#6b7280">
+          </div>
+          <div class="fg">
+            <label for="acctNewEmail">New Email</label>
+            <input type="email" id="acctNewEmail" placeholder="Enter new email address">
+          </div>
+          <div class="fg">
+            <label for="acctEmailPassword">Current Password (required for verification)</label>
+            <input type="password" id="acctEmailPassword" placeholder="Enter your current password">
+          </div>
+          <div class="account-msg" id="emailChangeMsg" style="display:none;padding:10px 14px;border-radius:8px;font-size:.85rem;margin-bottom:12px"></div>
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="changeEmailBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Update Email
+            </button>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Change Password
+          </h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">Update your admin panel password. Use a strong, unique password.</p>
+          <div class="fg">
+            <label for="acctCurrentPassword">Current Password</label>
+            <input type="password" id="acctCurrentPassword" placeholder="Enter your current password">
+          </div>
+          <div class="fg">
+            <label for="acctNewPassword">New Password</label>
+            <input type="password" id="acctNewPassword" placeholder="Enter new password (min 6 characters)">
+          </div>
+          <div class="fg">
+            <label for="acctConfirmPassword">Confirm New Password</label>
+            <input type="password" id="acctConfirmPassword" placeholder="Re-enter new password">
+          </div>
+          <div id="passwordStrength" style="display:none;margin-bottom:12px">
+            <div style="display:flex;gap:4px;margin-bottom:4px">
+              <div id="pwStr1" style="flex:1;height:4px;border-radius:2px;background:#e5e7eb"></div>
+              <div id="pwStr2" style="flex:1;height:4px;border-radius:2px;background:#e5e7eb"></div>
+              <div id="pwStr3" style="flex:1;height:4px;border-radius:2px;background:#e5e7eb"></div>
+              <div id="pwStr4" style="flex:1;height:4px;border-radius:2px;background:#e5e7eb"></div>
+            </div>
+            <small id="pwStrLabel" style="color:#6b7280;font-size:.75rem">Password strength</small>
+          </div>
+          <div class="account-msg" id="passwordChangeMsg" style="display:none;padding:10px 14px;border-radius:8px;font-size:.85rem;margin-bottom:12px"></div>
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="changePasswordBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Update Password
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== NAVIGATION LINKS ==================== -->
+      <div class="tab-panel" id="tab-navigation">
+        <div class="page-header">
+          <h1>Navigation Links</h1>
+          <p>Add, edit, remove, and reorder header menu links</p>
+        </div>
+
+        <div class="page-header-actions">
+          <button class="btn btn-primary" id="newNavLinkBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Nav Link
+          </button>
+        </div>
+
+        <div class="editor-card" id="navLinkForm" style="display:none">
+          <h3 id="navLinkFormTitle">Add New Link</h3>
+          <input type="hidden" id="navLinkEditId">
+          <div class="form-row">
+            <div class="fg">
+              <label for="navLinkLabel">Link Label</label>
+              <input type="text" id="navLinkLabel" placeholder="e.g. About" required>
+            </div>
+            <div class="fg">
+              <label for="navLinkHref">Link Target (href)</label>
+              <input type="text" id="navLinkHref" placeholder="e.g. #about or https://..." required>
+              <small style="color:#6b7280;font-size:.75rem">Use # for sections (e.g. #about, #contact) or full URL for external links</small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="navLinkOrder">Order</label>
+              <input type="number" id="navLinkOrder" placeholder="1" min="0">
+            </div>
+            <div class="fg">
+              <label for="navLinkTarget">Open In</label>
+              <select id="navLinkTarget">
+                <option value="_self">Same Tab</option>
+                <option value="_blank">New Tab</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg" style="flex:0 0 auto">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+                <input type="checkbox" id="navLinkVisible" checked>
+                Visible on website
+              </label>
+            </div>
+          </div>
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveNavLinkBtn">Save Link</button>
+            <button class="btn btn-outline-dark" id="cancelNavLinkBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="navLinksList"></div>
+      </div>
+
+      <!-- ==================== THEME / COLORS ==================== -->
+      <div class="tab-panel" id="tab-theme">
+        <div class="page-header">
+          <h1>Theme / Colors</h1>
+          <p>Customize the website color scheme and appearance</p>
+        </div>
+
+        <div class="editor-card">
+          <h3>Preset Themes</h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">Click a preset to apply, then customize individual colors below</p>
+          <div class="theme-presets" id="themePresets" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+            <button class="btn btn-sm theme-preset-btn" data-preset="violet" style="background:linear-gradient(135deg,#7c3aed 50%,#a78bfa 50%);color:#fff;min-width:120px;height:48px;border:2px solid #e2e8f0;border-radius:12px;font-weight:600">Violet</button>
+            <button class="btn btn-sm theme-preset-btn" data-preset="ocean-blue" style="background:linear-gradient(135deg,#1e40af 50%,#38bdf8 50%);color:#fff;min-width:120px;height:48px;border:2px solid #e2e8f0;border-radius:12px;font-weight:600">Ocean Blue</button>
+            <button class="btn btn-sm theme-preset-btn" data-preset="ember-orange" style="background:linear-gradient(135deg,#9a3412 50%,#fb923c 50%);color:#fff;min-width:120px;height:48px;border:2px solid #e2e8f0;border-radius:12px;font-weight:600">Ember Orange</button>
+            <button class="btn btn-sm theme-preset-btn" data-preset="emerald-green" style="background:linear-gradient(135deg,#065f46 50%,#10b981 50%);color:#fff;min-width:120px;height:48px;border:2px solid #e2e8f0;border-radius:12px;font-weight:600">Emerald Green</button>
+            <button class="btn btn-sm theme-preset-btn" data-preset="crimson" style="background:linear-gradient(135deg,#991b1b 50%,#f87171 50%);color:#fff;min-width:120px;height:48px;border:2px solid #e2e8f0;border-radius:12px;font-weight:600">Crimson</button>
+            <button class="btn btn-sm theme-preset-btn" data-preset="ice-blue" style="background:linear-gradient(135deg,#0e7490 50%,#67e8f9 50%);color:#fff;min-width:120px;height:48px;border:2px solid #e2e8f0;border-radius:12px;font-weight:600">Ice Blue</button>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Accent Colors</h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">Used for buttons, highlights, badges, and call-to-action elements</p>
+          <div class="form-row">
+            <div class="fg">
+              <label for="themeAccent1">Main Accent (Primary)</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeAccent1" value="#7c3aed" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeAccent1Hex" value="#7c3aed" placeholder="#7c3aed" style="flex:1">
+              </div>
+            </div>
+            <div class="fg">
+              <label for="themeAccent2">Secondary Accent</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeAccent2" value="#a78bfa" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeAccent2Hex" value="#a78bfa" placeholder="#a78bfa" style="flex:1">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="themeAccent3">Tertiary Accent</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeAccent3" value="#c4b5fd" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeAccent3Hex" value="#c4b5fd" placeholder="#c4b5fd" style="flex:1">
+              </div>
+            </div>
+            <div class="fg"></div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Background &amp; Text Colors</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="themeBgPrimary">Primary Background</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeBgPrimary" value="#0a0a0f" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeBgPrimaryHex" value="#0a0a0f" placeholder="#0a0a0f" style="flex:1">
+              </div>
+            </div>
+            <div class="fg">
+              <label for="themeBgSecondary">Secondary Background</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeBgSecondary" value="#111118" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeBgSecondaryHex" value="#111118" placeholder="#111118" style="flex:1">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="themeTextPrimary">Primary Text</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeTextPrimary" value="#ffffff" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeTextPrimaryHex" value="#ffffff" placeholder="#ffffff" style="flex:1">
+              </div>
+            </div>
+            <div class="fg">
+              <label for="themeTextSecondary">Secondary Text</label>
+              <div style="display:flex;align-items:center;gap:10px">
+                <input type="color" id="themeTextSecondary" value="#94a3b8" style="width:50px;height:40px;border:none;cursor:pointer;border-radius:8px">
+                <input type="text" id="themeTextSecondaryHex" value="#94a3b8" placeholder="#94a3b8" style="flex:1">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card" id="themePreviewCard">
+          <h3>Live Preview</h3>
+          <div id="themePreview" style="padding:20px;border-radius:12px;border:1px solid #e2e8f0;background:#0a0a0f">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+              <div id="prevAccent1" style="width:40px;height:40px;border-radius:8px;background:#7c3aed"></div>
+              <div id="prevAccent2" style="width:40px;height:40px;border-radius:8px;background:#a78bfa"></div>
+              <div id="prevBgPrimary" style="width:40px;height:40px;border-radius:8px;background:#0a0a0f;border:1px solid #333"></div>
+              <div id="prevTextPrimary" style="width:40px;height:40px;border-radius:8px;background:#ffffff;border:1px solid #ddd"></div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <span id="prevBtnPrimary" style="padding:8px 16px;border-radius:8px;font-size:.85rem;font-weight:600;color:#fff;background:#7c3aed">Primary Button</span>
+              <span id="prevHeading" style="font-size:1.2rem;font-weight:700;color:#fff">Heading Text</span>
+              <span id="prevHighlight" style="color:#a78bfa;font-weight:600">Highlight</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="saveThemeBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Theme
+          </button>
+          <button class="btn btn-outline-dark" id="resetThemeBtn">Reset to Default</button>
+        </div>
+      </div>
+
+      <!-- ==================== HERO SECTION ==================== -->
+      <div class="tab-panel" id="tab-hero">
+        <div class="page-header">
+          <h1>Hero Section</h1>
+          <p>Manage the main banner area of your portfolio</p>
+        </div>
+
+        <div class="editor-card">
+          <h3>Hero Content</h3>
+          <div class="fg">
+            <label for="heroBadge">Badge Text</label>
+            <input type="text" id="heroBadge" placeholder="Available for opportunities">
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="heroFirstName">First Name</label>
+              <input type="text" id="heroFirstName" placeholder="Junaid">
+            </div>
+            <div class="fg">
+              <label for="heroLastName">Last Name</label>
+              <input type="text" id="heroLastName" placeholder="Ashrafi">
+            </div>
+          </div>
+          <div class="fg">
+            <label for="heroTypedRoles">Typed Roles (comma-separated)</label>
+            <input type="text" id="heroTypedRoles" placeholder="SDET, QA Engineer, Automation Architect, Test Lead">
+          </div>
+          <div class="fg">
+            <label for="heroDescription">Description</label>
+            <textarea id="heroDescription" rows="4" placeholder="A brief description about yourself shown in the hero section..."></textarea>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Hero Metrics</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="heroMetric1Value">Metric 1 Value</label>
+              <input type="text" id="heroMetric1Value" placeholder="8+">
+            </div>
+            <div class="fg">
+              <label for="heroMetric1Label">Metric 1 Label</label>
+              <input type="text" id="heroMetric1Label" placeholder="Years Experience">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="heroMetric2Value">Metric 2 Value</label>
+              <input type="text" id="heroMetric2Value" placeholder="50+">
+            </div>
+            <div class="fg">
+              <label for="heroMetric2Label">Metric 2 Label</label>
+              <input type="text" id="heroMetric2Label" placeholder="Projects Delivered">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="heroMetric3Value">Metric 3 Value</label>
+              <input type="text" id="heroMetric3Value" placeholder="1000+">
+            </div>
+            <div class="fg">
+              <label for="heroMetric3Label">Metric 3 Label</label>
+              <input type="text" id="heroMetric3Label" placeholder="Test Cases Automated">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Profile Photo</h3>
+          <div class="image-upload-group">
+            <label class="image-upload-label" for="heroImageInput">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Upload Image</span>
+              <input type="file" id="heroImageInput" accept="image/*" class="file-input-hidden">
+            </label>
+            <div class="image-preview" id="heroImagePreview"></div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Floating Badges</h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">Small floating badges displayed around the hero image</p>
+          <div class="form-row">
+            <div class="fg">
+              <label for="heroBadge1">Badge 1</label>
+              <input type="text" id="heroBadge1" placeholder="e.g. Selenium">
+            </div>
+            <div class="fg">
+              <label for="heroBadge2">Badge 2</label>
+              <input type="text" id="heroBadge2" placeholder="e.g. Cypress">
+            </div>
+          </div>
+          <div class="fg" style="max-width:calc(50% - 8px)">
+            <label for="heroBadge3">Badge 3</label>
+            <input type="text" id="heroBadge3" placeholder="e.g. Playwright">
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="saveHeroBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Hero Section
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== ABOUT SECTION ==================== -->
+      <div class="tab-panel" id="tab-about">
+        <div class="page-header">
+          <h1>About Section</h1>
+          <p>Manage your About page content</p>
+        </div>
+
+        <div class="editor-card">
+          <h3>About Stats</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutStat1Value">Stat 1 Value</label>
+              <input type="text" id="aboutStat1Value" placeholder="8+">
+            </div>
+            <div class="fg">
+              <label for="aboutStat1Label">Stat 1 Label</label>
+              <input type="text" id="aboutStat1Label" placeholder="Years Experience">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutStat2Value">Stat 2 Value</label>
+              <input type="text" id="aboutStat2Value" placeholder="50+">
+            </div>
+            <div class="fg">
+              <label for="aboutStat2Label">Stat 2 Label</label>
+              <input type="text" id="aboutStat2Label" placeholder="Projects">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutStat3Value">Stat 3 Value</label>
+              <input type="text" id="aboutStat3Value" placeholder="15+">
+            </div>
+            <div class="fg">
+              <label for="aboutStat3Label">Stat 3 Label</label>
+              <input type="text" id="aboutStat3Label" placeholder="Certifications">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutStat4Value">Stat 4 Value</label>
+              <input type="text" id="aboutStat4Value" placeholder="1000+">
+            </div>
+            <div class="fg">
+              <label for="aboutStat4Label">Stat 4 Label</label>
+              <input type="text" id="aboutStat4Label" placeholder="Test Cases">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>About Paragraphs</h3>
+          <div class="fg">
+            <label for="aboutParagraph1">Paragraph 1</label>
+            <textarea id="aboutParagraph1" rows="4" placeholder="First paragraph of your about section..."></textarea>
+          </div>
+          <div class="fg">
+            <label for="aboutParagraph2">Paragraph 2</label>
+            <textarea id="aboutParagraph2" rows="4" placeholder="Second paragraph of your about section..."></textarea>
+          </div>
+          <div class="fg">
+            <label for="aboutParagraph3">Paragraph 3</label>
+            <textarea id="aboutParagraph3" rows="4" placeholder="Third paragraph of your about section..."></textarea>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Detail Cards</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutRole">Current Role</label>
+              <input type="text" id="aboutRole" placeholder="SDET / QA Engineer">
+            </div>
+            <div class="fg">
+              <label for="aboutCompany">Company</label>
+              <input type="text" id="aboutCompany" placeholder="Company Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutLocation">Location</label>
+              <input type="text" id="aboutLocation" placeholder="Country">
+            </div>
+            <div class="fg">
+              <label for="aboutCity">City</label>
+              <input type="text" id="aboutCity" placeholder="City Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutCert">Top Certification</label>
+              <input type="text" id="aboutCert" placeholder="e.g. ISTQB">
+            </div>
+            <div class="fg">
+              <label for="aboutCertDetail">Cert Detail</label>
+              <input type="text" id="aboutCertDetail" placeholder="e.g. Foundation Level">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutEdu">Education</label>
+              <input type="text" id="aboutEdu" placeholder="e.g. MS Computer Science">
+            </div>
+            <div class="fg">
+              <label for="aboutEduDetail">Education Detail</label>
+              <input type="text" id="aboutEduDetail" placeholder="e.g. University Name">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Highlight Cards</h3>
+          <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">Three highlight cards displayed in the about section</p>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutHl1Title">Highlight 1 Title</label>
+              <input type="text" id="aboutHl1Title" placeholder="e.g. Quality First">
+            </div>
+            <div class="fg">
+              <label for="aboutHl1Desc">Highlight 1 Description</label>
+              <input type="text" id="aboutHl1Desc" placeholder="Brief description...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutHl2Title">Highlight 2 Title</label>
+              <input type="text" id="aboutHl2Title" placeholder="e.g. Automation Expert">
+            </div>
+            <div class="fg">
+              <label for="aboutHl2Desc">Highlight 2 Description</label>
+              <input type="text" id="aboutHl2Desc" placeholder="Brief description...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="aboutHl3Title">Highlight 3 Title</label>
+              <input type="text" id="aboutHl3Title" placeholder="e.g. CI/CD Integration">
+            </div>
+            <div class="fg">
+              <label for="aboutHl3Desc">Highlight 3 Description</label>
+              <input type="text" id="aboutHl3Desc" placeholder="Brief description...">
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="saveAboutBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save About Section
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== SKILLS ==================== -->
+      <div class="tab-panel" id="tab-skills">
+        <div class="page-header">
+          <h1>Skills</h1>
+          <button class="btn btn-primary" id="newSkillBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Skill Category
+          </button>
+        </div>
+
+        <div class="editor-card" id="skillForm" style="display:none">
+          <h3 id="skillFormTitle">Add Skill Category</h3>
+          <input type="hidden" id="skillEditId">
+
+          <div class="fg">
+            <label for="skillCategory">Category Name</label>
+            <input type="text" id="skillCategory" placeholder="e.g. Test Automation, Programming Languages" required>
+          </div>
+
+          <div class="fg">
+            <label for="skillPills">Skills (comma-separated)</label>
+            <input type="text" id="skillPills" placeholder="e.g. Selenium, Cypress, Playwright, Appium" required>
+            <small style="color:#6b7280;font-size:.75rem">Each item will appear as a pill/tag on the website</small>
+          </div>
+
+          <div class="fg" style="max-width:200px">
+            <label for="skillOrder">Order Number</label>
+            <input type="number" id="skillOrder" placeholder="1" min="0">
+          </div>
+
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveSkillBtn">Save Skill Category</button>
+            <button class="btn btn-outline-dark" id="cancelSkillBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="skillsList"></div>
+      </div>
+
+      <!-- ==================== EXPERIENCE ==================== -->
+      <div class="tab-panel" id="tab-experience">
+        <div class="page-header">
+          <h1>Experience</h1>
+          <button class="btn btn-primary" id="newExpBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Experience
+          </button>
+        </div>
+
+        <div class="editor-card" id="expForm" style="display:none">
+          <h3 id="expFormTitle">Add Experience</h3>
+          <input type="hidden" id="expEditId">
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="expRole">Job Title / Role</label>
+              <input type="text" id="expRole" placeholder="e.g. Senior SDET" required>
+            </div>
+            <div class="fg">
+              <label for="expCompany">Company</label>
+              <input type="text" id="expCompany" placeholder="e.g. Acme Corp" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="expCompanyNote">Company Note (optional, e.g. "formerly AppifyTech")</label>
+            <input type="text" id="expCompanyNote" placeholder="e.g. formerly AppifyTech">
+          </div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="expDateRange">Date Range</label>
+              <input type="text" id="expDateRange" placeholder="e.g. Jan 2020 - Present" required>
+            </div>
+            <div class="fg">
+              <label for="expOrder">Order Number</label>
+              <input type="number" id="expOrder" placeholder="1" min="0">
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="expDescription">Description (bullet points, one per line)</label>
+            <textarea id="expDescription" rows="5" placeholder="Led automation framework development...&#10;Reduced regression time by 60%...&#10;Mentored junior QA engineers..."></textarea>
+          </div>
+
+          <div class="fg">
+            <label for="expTechTags">Tech Tags (comma-separated)</label>
+            <input type="text" id="expTechTags" placeholder="e.g. Selenium, Java, Jenkins, Docker">
+          </div>
+
+          <div class="fg" style="flex:0 0 auto">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+              <input type="checkbox" id="expCurrent">
+              Current Position
+            </label>
+          </div>
+
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveExpBtn">Save Experience</button>
+            <button class="btn btn-outline-dark" id="cancelExpBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="expList"></div>
+      </div>
+
+      <!-- ==================== EDUCATION ==================== -->
+      <div class="tab-panel" id="tab-education">
+        <div class="page-header">
+          <h1>Education</h1>
+          <button class="btn btn-primary" id="newEduBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Education
+          </button>
+        </div>
+
+        <div class="editor-card" id="eduForm" style="display:none">
+          <h3 id="eduFormTitle">Add Education</h3>
+          <input type="hidden" id="eduEditId">
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="eduDegree">Degree / Program</label>
+              <input type="text" id="eduDegree" placeholder="e.g. MS Computer Science" required>
+            </div>
+            <div class="fg">
+              <label for="eduSchool">School / University</label>
+              <input type="text" id="eduSchool" placeholder="e.g. University of ABC" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="eduYears">Years</label>
+              <input type="text" id="eduYears" placeholder="e.g. 2016 - 2018" required>
+            </div>
+            <div class="fg">
+              <label for="eduOrder">Order Number</label>
+              <input type="number" id="eduOrder" placeholder="1" min="0">
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="eduDescription">Description</label>
+            <textarea id="eduDescription" rows="3" placeholder="Details about the degree, relevant coursework, thesis, etc."></textarea>
+          </div>
+
+          <div class="fg" style="max-width:calc(50% - 8px)">
+            <label for="eduBadge">Badge (optional)</label>
+            <input type="text" id="eduBadge" placeholder="e.g. Gold Medalist, Dean's List">
+          </div>
+
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveEduBtn">Save Education</button>
+            <button class="btn btn-outline-dark" id="cancelEduBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="eduList"></div>
+
+        <!-- Certifications Sub-Section -->
+        <div style="margin-top:40px">
+          <div class="page-header">
+            <h1>Certifications</h1>
+            <button class="btn btn-primary" id="newCertBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add Certification
+            </button>
+          </div>
+
+          <div class="editor-card" id="certForm" style="display:none">
+            <h3 id="certFormTitle">Add Certification</h3>
+            <input type="hidden" id="certEditId">
+
+            <div class="form-row">
+              <div class="fg">
+                <label for="certName">Certification Name</label>
+                <input type="text" id="certName" placeholder="e.g. ISTQB Foundation Level" required>
+              </div>
+              <div class="fg">
+                <label for="certDetail">Detail / Issuer</label>
+                <input type="text" id="certDetail" placeholder="e.g. International Software Testing Qualifications Board">
+              </div>
+              <div class="fg" style="flex:0 0 100px">
+                <label for="certOrder">Order</label>
+                <input type="number" id="certOrder" placeholder="1" min="0">
+              </div>
+            </div>
+
+            <div class="editor-actions">
+              <button class="btn btn-primary" id="saveCertBtn">Save Certification</button>
+              <button class="btn btn-outline-dark" id="cancelCertBtn">Cancel</button>
+            </div>
+          </div>
+
+          <div class="data-list" id="certsList"></div>
+        </div>
+      </div>
+
+      <!-- ==================== PROJECTS ==================== -->
+      <div class="tab-panel" id="tab-projects">
+        <div class="page-header">
+          <h1>Projects</h1>
+          <button class="btn btn-primary" id="newProjBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Project
+          </button>
+        </div>
+
+        <div class="editor-card" id="projForm" style="display:none">
+          <h3 id="projFormTitle">Add Project</h3>
+          <input type="hidden" id="projEditId">
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="projLabel">Category Label</label>
+              <input type="text" id="projLabel" placeholder="e.g. Test Automation, Web App, API Testing" required>
+            </div>
+            <div class="fg">
+              <label for="projTitle">Project Title</label>
+              <input type="text" id="projTitle" placeholder="e.g. E2E Test Framework" required>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="projDescription">Description</label>
+            <textarea id="projDescription" rows="4" placeholder="Describe the project, its goals and your role..."></textarea>
+          </div>
+
+          <div class="fg">
+            <label for="projTechTags">Tech Tags (comma-separated)</label>
+            <input type="text" id="projTechTags" placeholder="e.g. Playwright, TypeScript, GitHub Actions">
+          </div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="projGithubUrl">GitHub URL</label>
+              <input type="url" id="projGithubUrl" placeholder="https://github.com/...">
+            </div>
+            <div class="fg">
+              <label for="projLiveUrl">Live Demo URL</label>
+              <input type="url" id="projLiveUrl" placeholder="https://your-app.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="projOrder">Order Number</label>
+              <input type="number" id="projOrder" placeholder="1" min="0">
+            </div>
+          </div>
+
+          <div class="fg" style="flex:0 0 auto">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+              <input type="checkbox" id="projFeatured">
+              Featured Project
+            </label>
+          </div>
+
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveProjBtn">Save Project</button>
+            <button class="btn btn-outline-dark" id="cancelProjBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="projList"></div>
+      </div>
+
+      <!-- ==================== DOWNLOADS ==================== -->
+      <div class="tab-panel" id="tab-downloads">
+        <div class="page-header">
+          <h1>Download Management</h1>
+          <p>Upload files, manage categories, visibility, and downloads section content</p>
+        </div>
+
+        <div class="editor-card">
+          <h3>Upload Files</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="downloadTitle">Title (required)</label>
+              <input type="text" id="downloadTitle" placeholder="e.g. Semester 2 Notes" required>
+            </div>
+            <div class="fg">
+              <label for="downloadCategory">Category</label>
+              <input type="text" id="downloadCategory" list="downloadCategoryOptions" placeholder="e.g. PPT, PDF, Notes, Images">
+              <datalist id="downloadCategoryOptions"></datalist>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="downloadDescription">Description (optional)</label>
+            <textarea id="downloadDescription" rows="3" placeholder="Short description for uploaded files..."></textarea>
+          </div>
+          <div class="fg">
+            <label for="downloadTags">Tags (comma-separated, optional)</label>
+            <input type="text" id="downloadTags" placeholder="e.g. mba, accounting, semester-1">
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="downloadFileInput">Select Files (multiple allowed)</label>
+              <input type="file" id="downloadFileInput" multiple>
+              <small style="color:#6b7280;font-size:.75rem">Any file type allowed, up to 100MB per file. Uses Firebase Storage or Cloudinary (if configured in Site Settings).</small>
+            </div>
+            <div class="fg" style="display:flex;align-items:end">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+                <input type="checkbox" id="downloadVisible" checked>
+                Visible on website
+              </label>
+            </div>
+          </div>
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="uploadDownloadsBtn">Upload Selected Files</button>
+          </div>
+          <div class="fg" style="margin-top:12px">
+            <label>Upload Progress</label>
+            <div id="downloadUploadProgress" style="font-size:.85rem;color:#6b7280">No upload in progress.</div>
+          </div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Categories</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="newDownloadCategory">New Category Name</label>
+              <input type="text" id="newDownloadCategory" placeholder="e.g. Word Files">
+            </div>
+            <div class="fg" style="display:flex;align-items:end">
+              <button class="btn btn-primary" id="addDownloadCategoryBtn">Add Category</button>
+            </div>
+          </div>
+          <div class="data-list" id="downloadCategoriesList"></div>
+        </div>
+
+        <div class="editor-card">
+          <h3>Uploaded Files</h3>
+          <div class="form-row">
+            <div class="fg">
+              <label for="downloadsSearchAdmin">Search</label>
+              <input type="text" id="downloadsSearchAdmin" placeholder="Search by title, file name, or tags...">
+            </div>
+            <div class="fg">
+              <label for="downloadsCategoryAdmin">Filter Category</label>
+              <select id="downloadsCategoryAdmin">
+                <option value="">All Categories</option>
+              </select>
+            </div>
+          </div>
+          <div class="data-list" id="downloadsList"></div>
+        </div>
+      </div>
+
+      <!-- ==================== CONTACT ==================== -->
+      <div class="tab-panel" id="tab-contact">
+        <div class="page-header">
+          <h1>Contact</h1>
+          <button class="btn btn-primary" id="newContactBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Contact Card
+          </button>
+        </div>
+
+        <div class="editor-card" id="contactForm" style="display:none">
+          <h3 id="contactFormTitle">Add Contact Card</h3>
+          <input type="hidden" id="contactEditId">
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="contactType">Type</label>
+              <select id="contactType">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="github">GitHub</option>
+                <option value="kaggle">Kaggle</option>
+                <option value="website">Website</option>
+                <option value="jamia">Institute (Special Card)</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="contactLabel">Label</label>
+              <input type="text" id="contactLabel" placeholder="e.g. Work Email, Personal Phone" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="contactValue">Value</label>
+              <input type="text" id="contactValue" placeholder="e.g. your@email.com or +1 XXX XXX XXXX" required>
+            </div>
+            <div class="fg">
+              <label for="contactUrl">URL (optional)</label>
+              <input type="url" id="contactUrl" placeholder="https://...">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="contactAction">Action Text</label>
+              <input type="text" id="contactAction" placeholder="e.g. Send Email →, Connect →">
+            </div>
+            <div class="fg" style="max-width:200px">
+              <label for="contactOrder">Order Number</label>
+              <input type="number" id="contactOrder" placeholder="1" min="0">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg" style="max-width:200px">
+              <label><input type="checkbox" id="contactExternal" style="margin-right:6px">Opens in new tab</label>
+            </div>
+          </div>
+
+          <div id="jamiaFields" style="display:none">
+            <hr style="margin:16px 0;border-color:#374151">
+            <h4 style="margin-bottom:12px;color:#9ca3af">Institute Card Settings</h4>
+            <div class="form-row">
+              <div class="fg">
+                <label for="contactDesc">Description</label>
+                <input type="text" id="contactDesc" placeholder="Institute description">
+              </div>
+              <div class="fg" style="max-width:120px">
+                <label for="contactSeal">Seal Text</label>
+                <input type="text" id="contactSeal" placeholder="JH" maxlength="3">
+              </div>
+            </div>
+            <div class="fg">
+              <label for="contactImage">Image URL</label>
+              <input type="url" id="contactImage" placeholder="https://...">
+            </div>
+          </div>
+
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveContactBtn">Save Contact</button>
+            <button class="btn btn-outline-dark" id="cancelContactBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="contactList"></div>
+
+        <!-- CTA Sub-Section -->
+        <div style="margin-top:40px">
+          <div class="editor-card">
+            <h3>Call-to-Action Section</h3>
+            <p style="color:#6b7280;font-size:.85rem;margin-bottom:16px">The CTA block shown at the bottom of the contact section</p>
+            <div class="fg">
+              <label for="contactCtaTitle">CTA Title</label>
+              <input type="text" id="contactCtaTitle" placeholder="e.g. Let's Work Together">
+            </div>
+            <div class="fg">
+              <label for="contactCtaText">CTA Description</label>
+              <textarea id="contactCtaText" rows="3" placeholder="A brief message encouraging visitors to reach out..."></textarea>
+            </div>
+            <div class="fg">
+              <label for="contactCtaUrl">CTA Button URL</label>
+              <input type="url" id="contactCtaUrl" placeholder="mailto:your@email.com or https://calendly.com/...">
+            </div>
+
+            <div class="editor-actions">
+              <button class="btn btn-primary" id="saveCtaBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Save CTA
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== FOOTER LINKS ==================== -->
+      <div class="tab-panel" id="tab-footer-links">
+        <div class="page-header">
+          <h1>Footer Links</h1>
+          <p>Manage the Quick Links section in the footer</p>
+          <button class="btn btn-primary" id="newFooterLinkBtn" style="margin-top:12px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Footer Link
+          </button>
+        </div>
+
+        <div class="editor-card" id="footerLinkForm" style="display:none">
+          <h3 id="footerLinkFormTitle">Add Footer Link</h3>
+          <input type="hidden" id="footerLinkEditId">
+          <div class="form-row">
+            <div class="fg">
+              <label for="footerLinkLabel">Link Label</label>
+              <input type="text" id="footerLinkLabel" placeholder="e.g. About, Projects" required>
+            </div>
+            <div class="fg">
+              <label for="footerLinkHref">Link Target (href)</label>
+              <input type="text" id="footerLinkHref" placeholder="e.g. #about or https://..." required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label for="footerLinkOrder">Order</label>
+              <input type="number" id="footerLinkOrder" placeholder="1" min="0">
+            </div>
+            <div class="fg">
+              <label for="footerLinkTarget">Open In</label>
+              <select id="footerLinkTarget">
+                <option value="_self">Same Tab</option>
+                <option value="_blank">New Tab</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg" style="flex:0 0 auto">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+                <input type="checkbox" id="footerLinkVisible" checked>
+                Visible
+              </label>
+            </div>
+            <div class="fg" style="flex:0 0 auto">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+                <input type="checkbox" id="footerLinkIsAdmin">
+                Admin Link (dimmed style)
+              </label>
+            </div>
+          </div>
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveFooterLinkBtn">Save Link</button>
+            <button class="btn btn-outline-dark" id="cancelFooterLinkBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="footerLinksList"></div>
+      </div>
+
+      <!-- ==================== AI CHATBOT ==================== -->
+      <div class="tab-panel" id="tab-chatbot">
+        <div class="page-header">
+          <h1>AI Chatbot</h1>
+          <button class="btn btn-primary" id="newKbBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add KB Entry
+          </button>
+        </div>
+
+        <div class="editor-card" id="kbForm" style="display:none">
+          <h3 id="kbFormTitle">Add Knowledge Base Entry</h3>
+          <input type="hidden" id="kbEditId">
+
+          <div class="fg">
+            <label for="kbKey">Trigger Keyword</label>
+            <input type="text" id="kbKey" placeholder="e.g. experience, skills, education, contact" required>
+            <small style="color:#6b7280;font-size:.75rem">The keyword or phrase the chatbot will match against</small>
+          </div>
+
+          <div class="fg">
+            <label for="kbValue">Response Text</label>
+            <textarea id="kbValue" rows="5" placeholder="The chatbot's response when the keyword is triggered..."></textarea>
+          </div>
+
+          <div class="editor-actions">
+            <button class="btn btn-primary" id="saveKbBtn">Save Entry</button>
+            <button class="btn btn-outline-dark" id="cancelKbBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="data-list" id="kbList"></div>
+      </div>
+
+      <!-- ==================== CV BUILDER ==================== -->
+      <div class="tab-panel" id="tab-cv-builder" style="padding:0;max-width:100%">
+        <div id="cvBuilderRoot"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <!-- Sortable.js for drag-drop -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <!-- html2pdf.js for PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="admin.js?v=20260403-8"></script>
+  <script src="cv-templates.js"></script>
+  <script src="cv-builder.js"></script>
+</body>
+</html>

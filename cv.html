@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root {
+      --primary: #2d3142;
+      --accent: #6c63ff;
+      --accent-light: #ece9ff;
+      --accent2: #e85d9b;
+      --text: #2d3142;
+      --text-light: #636b83;
+      --bg: #ffffff;
+      --bg-sidebar: #1e2235;
+      --sidebar-text: #c8cdd8;
+      --sidebar-heading: #ffffff;
+      --border: #e5e7eb;
+      --success: #10b981;
+    }
+    html { font-size: 14px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text); background: #f0f2f5; line-height: 1.6;
+    }
+
+    .cv-controls {
+      display: flex; justify-content: center; gap: 12px;
+      padding: 14px 20px; background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 50;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .cv-controls button, .cv-controls a {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 22px; border: none; border-radius: 10px;
+      font-family: inherit; font-size: .85rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: .2s;
+    }
+    .btn-download { background: var(--accent); color: #fff; }
+    .btn-download:hover { background: #5a52e0; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(108,99,255,0.35); }
+    .btn-back { background: #f3f4f6; color: var(--text); }
+    .btn-back:hover { background: #e5e7eb; }
+
+    .cv-wrapper {
+      max-width: 960px; margin: 28px auto;
+      background: var(--bg); border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: grid; grid-template-columns: 280px 1fr;
+    }
+
+    /* LEFT SIDEBAR */
+    .cv-sidebar {
+      background: var(--bg-sidebar); color: var(--sidebar-text);
+      padding: 36px 24px 28px;
+    }
+    .cv-sidebar a { color: #a8b4ff; text-decoration: none; transition: .15s; }
+    .cv-sidebar a:hover { color: #fff; }
+
+    .cv-profile {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 3px solid rgba(108,99,255,0.5); margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      font-size: 2.4rem; font-weight: 800; color: #fff; letter-spacing: 1px;
+      overflow: hidden;
+    }
+    .cv-profile img { width: 100%; height: 100%; object-fit: cover; display: none; }
+    .cv-sidebar-name {
+      text-align: center; font-size: 1.25rem; font-weight: 800;
+      color: var(--sidebar-heading); margin-bottom: 4px; letter-spacing: -0.3px;
+    }
+    .cv-sidebar-title {
+      text-align: center; font-size: .78rem; font-weight: 500;
+      color: var(--accent); letter-spacing: 0.5px; margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .sb-section { margin-bottom: 22px; }
+    .sb-heading {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: rgba(255,255,255,0.4);
+      margin-bottom: 10px; padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .sb-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 10px; font-size: .8rem; line-height: 1.5;
+    }
+    .sb-icon {
+      flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px;
+      color: var(--accent); opacity: 0.85;
+    }
+    .sb-item-label { font-size: .68rem; color: rgba(255,255,255,0.4); display: block; }
+    .sb-item-value { color: var(--sidebar-text); }
+
+    .sb-skill { margin-bottom: 10px; }
+    .sb-skill-name { font-size: .78rem; font-weight: 600; color: var(--sidebar-heading); margin-bottom: 3px; }
+    .sb-skill-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+    .sb-skill-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+    .sb-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+    .sb-pill {
+      padding: 3px 10px; font-size: .7rem; font-weight: 600;
+      border: 1px solid rgba(108,99,255,0.35); color: #a8b4ff;
+      border-radius: 100px; white-space: nowrap;
+    }
+
+    /* RIGHT MAIN BODY */
+    .cv-main { padding: 36px 32px 28px; }
+
+    .cv-section { margin-bottom: 24px; }
+    .cv-section-title {
+      font-size: .75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2.5px; color: var(--accent);
+      padding-bottom: 8px; margin-bottom: 16px;
+      border-bottom: 2px solid var(--accent-light);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cv-section-title svg { width: 16px; height: 16px; }
+
+    .cv-summary {
+      font-size: .88rem; color: var(--text-light); line-height: 1.75;
+      border-left: 3px solid var(--accent); padding-left: 16px;
+    }
+
+    .cv-exp { margin-bottom: 18px; position: relative; padding-left: 18px; }
+    .cv-exp::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 0 3px var(--accent-light);
+    }
+    .cv-exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+    .cv-exp-role { font-weight: 700; font-size: .92rem; color: var(--primary); }
+    .cv-exp-date {
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+      color: #fff; background: var(--accent); padding: 2px 10px;
+      border-radius: 100px; font-weight: 500;
+    }
+    .cv-exp-company { font-size: .82rem; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .cv-exp ul { padding-left: 16px; font-size: .82rem; color: var(--text-light); }
+    .cv-exp li { margin-bottom: 3px; }
+    .cv-exp li::marker { color: var(--accent); }
+
+    .cv-edu {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; margin-bottom: 12px; padding: 10px 14px;
+      background: #f9f9fb; border-radius: 8px; border-left: 3px solid var(--accent);
+    }
+    .cv-edu-degree { font-weight: 700; font-size: .88rem; color: var(--primary); }
+    .cv-edu-school { font-size: .78rem; color: var(--text-light); }
+    .cv-edu-year {
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+      color: var(--accent); font-weight: 600; white-space: nowrap;
+    }
+
+    .cv-certs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cv-cert {
+      padding: 5px 16px; font-size: .76rem; font-weight: 600;
+      background: var(--accent-light); color: var(--accent);
+      border-radius: 100px; display: inline-flex; align-items: center; gap: 5px;
+    }
+    .cv-cert::before { content: '\2713'; font-weight: 800; font-size: .7rem; }
+
+    .cv-project {
+      padding: 10px 14px; background: #f9f9fb; border-radius: 8px;
+      margin-bottom: 10px; border-left: 3px solid var(--accent2);
+    }
+    .cv-project-name { font-weight: 700; font-size: .85rem; color: var(--primary); margin-bottom: 2px; }
+    .cv-project-desc { font-size: .78rem; color: var(--text-light); }
+
+    @page { size: A4; margin: 0; }
+    @media print {
+      html { font-size: 11.5px; }
+      body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cv-controls { display: none !important; }
+      .cv-wrapper {
+        margin: 0; border-radius: 0; box-shadow: none;
+        max-width: 100%; width: 100%;
+        grid-template-columns: 240px 1fr;
+      }
+      .cv-sidebar { padding: 24px 18px 20px; }
+      .cv-main { padding: 24px 24px 20px; }
+      .cv-section { margin-bottom: 16px; }
+      .cv-exp { margin-bottom: 12px; }
+      .cv-profile { width: 90px; height: 90px; font-size: 1.8rem; }
+    }
+    @media (max-width: 700px) {
+      .cv-wrapper { grid-template-columns: 1fr; max-width: 100%; margin: 0; border-radius: 0; }
+      .cv-sidebar { padding: 24px 20px; }
+      .cv-main { padding: 24px 20px; }
+      .cv-profile { width: 90px; height: 90px; font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-controls">
+    <a href="index.html" class="btn-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Portfolio
+    </a>
+    <button class="btn-download" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Save as PDF
+    </button>
+  </div>
+
+  <div class="cv-wrapper">
+    <aside class="cv-sidebar">
+      <div class="cv-profile" id="cvProfile">JA</div>
+      <h1 class="cv-sidebar-name" id="cvName">Loading...</h1>
+      <p class="cv-sidebar-title" id="cvTitle"></p>
+
+      <div class="sb-section">
+        <div class="sb-heading">Contact</div>
+        <div id="cvContact"></div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-heading">Online Profiles</div>
+        <div id="cvProfiles"></div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-heading">Core Skills</div>
+        <div id="cvSkillBars"></div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-heading">Tools & Frameworks</div>
+        <div class="sb-pills" id="cvToolPills"></div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-heading">Certifications</div>
+        <div id="cvCertsSidebar"></div>
+      </div>
+    </aside>
+
+    <main class="cv-main">
+      <section class="cv-section">
+        <h2 class="cv-section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Professional Summary
+        </h2>
+        <p class="cv-summary" id="cvSummary"></p>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3h-8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
+          Work Experience
+        </h2>
+        <div id="cvExperience"></div>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+          Education
+        </h2>
+        <div id="cvEducation"></div>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Key Projects
+        </h2>
+        <div id="cvProjects"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script>
+  (function () {
+    if (!window.initPortfolioFirebase || !window.initPortfolioFirebase()) return;
+
+    var db = firebase.database();
+    var DB = 'portfolio/';
+
+    function $(id) { return document.getElementById(id); }
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function toArr(d) {
+      if (!d) return [];
+      var arr = Array.isArray(d) ? d : Object.values(d);
+      if (arr.length && arr[0] && typeof arr[0].order !== 'undefined') {
+        arr.sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+      }
+      return arr;
+    }
+
+    var svgEmail = '<svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
+    var svgPhone = '<svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+    var svgLocation = '<svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+    var svgLink = '<svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+    var svgLinkedIn = '<svg class="sb-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
+    var svgGitHub = '<svg class="sb-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>';
+    var svgKaggle = '<svg class="sb-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.281.18.046.149.034.238-.036.27l-6.555 6.344 6.836 8.507c.095.104.117.208.075.323z"/></svg>';
+    var svgCert = '<svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5 4-2 4 2-2-5"/><circle cx="12" cy="8" r="7"/></svg>';
+
+    // ---- SETTINGS + HERO (sidebar info) ----
+    db.ref(DB + 'settings').on('value', function (snap) {
+      var s = snap.val();
+      if (!s) return;
+      $('cvName').textContent = s.name || '';
+      $('cvTitle').innerHTML = esc(s.title || '');
+
+      var contactHtml = '';
+      if (s.email) contactHtml += '<div class="sb-item">' + svgEmail + '<div><span class="sb-item-label">Email</span><a href="mailto:' + esc(s.email) + '">' + esc(s.email) + '</a></div></div>';
+      if (s.phone) contactHtml += '<div class="sb-item">' + svgPhone + '<div><span class="sb-item-label">Phone</span><a href="tel:' + esc(s.phone) + '">' + esc(s.phone) + '</a></div></div>';
+      if (s.location) contactHtml += '<div class="sb-item">' + svgLocation + '<div><span class="sb-item-label">Location</span>' + esc(s.location) + '</div></div>';
+      contactHtml += '<div class="sb-item">' + svgLink + '<div><span class="sb-item-label">Portfolio</span><a href="https://portfolio-junaid-hafeezs-projects-08ae99c1.vercel.app" target="_blank">portfolio-junaid-hafeezs-projects-08ae99c1.vercel.app</a></div></div>';
+      $('cvContact').innerHTML = contactHtml;
+
+      var profilesHtml = '';
+      if (s.linkedin) profilesHtml += '<div class="sb-item">' + svgLinkedIn + '<div><a href="' + esc(s.linkedin) + '" target="_blank">' + esc(s.linkedin.replace('https://', '')) + '</a></div></div>';
+      if (s.github) profilesHtml += '<div class="sb-item">' + svgGitHub + '<div><a href="' + esc(s.github) + '" target="_blank">' + esc(s.github.replace('https://', '')) + '</a></div></div>';
+      if (s.kaggle) profilesHtml += '<div class="sb-item">' + svgKaggle + '<div><a href="' + esc(s.kaggle) + '" target="_blank">' + esc(s.kaggle.replace('https://', '')) + '</a></div></div>';
+      $('cvProfiles').innerHTML = profilesHtml;
+    });
+
+    // ---- HERO (profile image + summary) ----
+    db.ref(DB + 'hero').on('value', function (snap) {
+      var d = snap.val();
+      if (!d) return;
+
+      var img = d.profileImage || d.image;
+      if (img) {
+        var profileEl = $('cvProfile');
+        profileEl.innerHTML = '<img src="' + img + '" alt="Profile" style="display:block">';
+      }
+
+      var initials = ((d.firstName || '').charAt(0) + (d.lastName || '').charAt(0)).toUpperCase();
+      if (!img && initials) $('cvProfile').textContent = initials;
+
+      if (d.description) $('cvSummary').innerHTML = esc(d.description);
+    });
+
+    // ---- SKILLS (sidebar bars + pills) ----
+    db.ref(DB + 'skills').on('value', function (snap) {
+      var d = snap.val();
+      if (!d) return;
+      var arr = toArr(d);
+      var barsHtml = '';
+      var allPills = [];
+      var barWidths = [96, 93, 90, 87, 84, 80, 77, 74];
+
+      arr.forEach(function (cat, i) {
+        barsHtml += '<div class="sb-skill"><div class="sb-skill-name">' + esc(cat.category || '') + '</div>' +
+          '<div class="sb-skill-bar"><div class="sb-skill-fill" style="width:' + (barWidths[i] || 75) + '%"></div></div></div>';
+
+        var pills = [];
+        if (cat.pills && typeof cat.pills === 'string') pills = cat.pills.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+        else if (Array.isArray(cat.pills)) pills = cat.pills;
+        allPills = allPills.concat(pills);
+      });
+
+      $('cvSkillBars').innerHTML = barsHtml;
+      $('cvToolPills').innerHTML = allPills.map(function (p) { return '<span class="sb-pill">' + esc(p) + '</span>'; }).join('');
+    });
+
+    // ---- CERTIFICATIONS (sidebar) ----
+    db.ref(DB + 'certs').on('value', function (snap) {
+      var d = snap.val();
+      var certsHtml = '';
+      if (d) {
+        toArr(d).forEach(function (c) {
+          var label = (typeof c === 'string') ? c : (c.title || c.name || '');
+          if (label) certsHtml += '<div class="sb-item">' + svgCert + '<div>' + esc(label) + '</div></div>';
+        });
+      }
+      if (!certsHtml) {
+        db.ref(DB + 'about').once('value', function (abSnap) {
+          var ab = abSnap.val();
+          if (ab && ab.cert) certsHtml += '<div class="sb-item">' + svgCert + '<div>' + esc(ab.cert) + '</div></div>';
+          certsHtml += '<div class="sb-item">' + svgCert + '<div>Agile / Scrum Methodology</div></div>';
+          certsHtml += '<div class="sb-item">' + svgCert + '<div>Selenium WebDriver Expert</div></div>';
+          $('cvCertsSidebar').innerHTML = certsHtml;
+        });
+        return;
+      }
+      $('cvCertsSidebar').innerHTML = certsHtml;
+    });
+
+    // ---- EXPERIENCE ----
+    db.ref(DB + 'experience').on('value', function (snap) {
+      var d = snap.val();
+      if (!d) return;
+      var arr = toArr(d);
+      $('cvExperience').innerHTML = arr.map(function (job) {
+        var period = job.period || job.dateRange || '';
+        var detailItems = [];
+        if (job.details) detailItems = toArr(job.details);
+        else if (job.description && typeof job.description === 'string') detailItems = job.description.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+        var details = detailItems.map(function (li) { return '<li>' + esc(typeof li === 'string' ? li : (li.text || '')) + '</li>'; }).join('');
+
+        return '<div class="cv-exp">' +
+          '<div class="cv-exp-header"><span class="cv-exp-role">' + esc(job.role || '') + '</span>' +
+          (period ? '<span class="cv-exp-date">' + esc(period) + '</span>' : '') + '</div>' +
+          '<div class="cv-exp-company">' + esc(job.company || '') + '</div>' +
+          (details ? '<ul>' + details + '</ul>' : '') + '</div>';
+      }).join('');
+    });
+
+    // ---- EDUCATION ----
+    db.ref(DB + 'education').on('value', function (snap) {
+      var d = snap.val();
+      if (!d) return;
+      var arr = toArr(d);
+      $('cvEducation').innerHTML = arr.map(function (edu) {
+        var degree = edu.degree || '';
+        var school = edu.school || '';
+        var years = edu.years || edu.year || '';
+        return '<div class="cv-edu"><div><span class="cv-edu-degree">' + esc(degree) + '</span><br>' +
+          '<span class="cv-edu-school">' + esc(school) + '</span></div>' +
+          '<span class="cv-edu-year">' + esc(years) + '</span></div>';
+      }).join('');
+    });
+
+    // ---- PROJECTS ----
+    db.ref(DB + 'projects').on('value', function (snap) {
+      var d = snap.val();
+      if (!d) return;
+      var arr = toArr(d);
+      $('cvProjects').innerHTML = arr.map(function (p) {
+        return '<div class="cv-project"><div class="cv-project-name">' + esc(p.title || p.name || '') + '</div>' +
+          '<div class="cv-project-desc">' + esc(p.description || '') + '</div></div>';
+      }).join('');
+    });
+  })();
+  </script>
+</body>
+</html>
